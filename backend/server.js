@@ -8,11 +8,18 @@ const app = express();
 
 // Middleware
 app.use(express.json());
-app.use(cors());
+
+// Configure CORS properly
+app.use(cors({
+  origin: "https://tourist-safety-website.vercel.app", // your frontend URL
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  credentials: true, // allow cookies or authorization headers
+}));
 
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/dashboard", dashboardRoutes);
+
 // Start server after DB connects
 const PORT = process.env.PORT || 5000;
 

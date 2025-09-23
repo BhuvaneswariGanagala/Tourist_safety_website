@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import Login from "./components/Login";
 import Layout from "./components/Layout";
 
-
 const App = () => {
   const [user, setUser] = useState(null);
 
@@ -24,8 +23,8 @@ const App = () => {
         <Login onLoginSuccess={handleLoginSuccess} />
       ) : (
         <div className="flex">
-          <Layout user={user} />
-          {/* <Home user={user} /> */}
+          {/* ✅ pass both user and setUser */}
+          <Layout user={user} setUser={setUser} />
         </div>
       )}
     </div>

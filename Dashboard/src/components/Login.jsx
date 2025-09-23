@@ -19,6 +19,7 @@ const Login = ({ onLoginSuccess }) => {   // ✅ receive here
       const response = await fetch("https://tourist-safety-website.onrender.com/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        credentials: "include",
         body: JSON.stringify(formData),
       });
 

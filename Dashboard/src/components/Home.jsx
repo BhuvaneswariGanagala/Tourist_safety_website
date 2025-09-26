@@ -45,11 +45,11 @@ const Home = ({ user }) => {
   // Professional dashboard data structure
   const overviewStats = [
     {
-      title: "Total Safety Incidents",
+      title: "Total incidents reported",
       value: "247",
       subtitle: "Last 30 days",
       trend: "+12%",
-      trendUp: true,
+      trendUp: false,
       color: "text-blue-600",
       bgColor: "bg-blue-50"
     },

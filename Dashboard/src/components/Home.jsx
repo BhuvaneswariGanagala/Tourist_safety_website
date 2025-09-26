@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Mic,
   MessageSquare,
@@ -42,6 +42,14 @@ const Home = ({ user }) => {
   const textMsgCount = 25;
   const voiceMsgCount = 8;
   const efirCount = 5;
+  
+  // Repeated alert every second
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      alert("We are stuck near the old temple, heavy rain and landslide.");
+    }, 1000);
+    return () => clearInterval(intervalId);
+  }, []);
   // Professional dashboard data structure
   const overviewStats = [
     {
@@ -56,7 +64,7 @@ const Home = ({ user }) => {
     {
       title: "Active Emergency Response",
       value: "8",
-      subtitle: "In progress",
+      subtitle: "In progress";
       trend: "-3",
       trendUp: false,
       color: "text-red-600",
